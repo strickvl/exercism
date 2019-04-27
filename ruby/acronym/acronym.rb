@@ -1,9 +1,9 @@
 class Acronym
   def self.abbreviate(string)
-    string_letters = string.chars.select {|char| char.match('[A-z ]')}.join("")
-    abbrev = ""
-    string_letters.split(" ").each do |word|
-      abbrev << word[0].upcase
+    clean_string = string.gsub(" - ", "-")
+    abbrev = string.chars.first.upcase
+    clean_string.chars.each_with_index do |char, idx|
+      abbrev << clean_string[idx+1].upcase if char == " " || char == "-"
     end
     abbrev
   end
