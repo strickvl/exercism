@@ -1,17 +1,13 @@
 class Complement
+  DNA_TO_RNA = {
+    "A" => "U",
+    "T" => "A",
+    "C" => "G",
+    "G" => "C"
+  }
   def self.of_dna(string)
-    transformed = ""
-    string.chars.each do |char|
-      if char == "A"
-        transformed << "U"
-      elsif char == "T"
-        transformed << "A"
-      elsif char == "C"
-        transformed << "G"
-      elsif char == "G"
-        transformed << "C"
-      end
-    end
-    transformed
+    string.chars.map do |char|
+      DNA_TO_RNA[char]
+    end.join("")
   end
 end
