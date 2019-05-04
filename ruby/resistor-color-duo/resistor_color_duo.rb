@@ -1,5 +1,5 @@
 class ResistorColorDuo
-  COLOUR_VALS = {
+  COLOUR_TO_VALUE = {
     "black" => 0,
     "brown" => 1,
     "red" => 2,
@@ -11,9 +11,9 @@ class ResistorColorDuo
     "grey" => 8,
     "white" => 9
   }
-  def self.value(arr)
-    first_val = COLOUR_VALS[arr[0]]
-    second_val = COLOUR_VALS[arr[1]]
-    "#{first_val}#{second_val}".to_i
+  def self.value(colours)
+    colours.map do |colour|
+      COLOUR_TO_VALUE[colour].to_s
+    end.join("").to_i
   end
 end

@@ -1,5 +1,11 @@
 class FlattenArray
   def self.flatten(arr)
-    arr.flatten.reject {|val| val == nil}
+    arr = arr.compact
+    final = []
+    arr.each do |item|
+      flatten(item) if item.class == Array
+      final << item
+    end
+    final.compact
   end
 end
