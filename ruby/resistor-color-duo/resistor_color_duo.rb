@@ -11,9 +11,8 @@ class ResistorColorDuo
     "grey" => 8,
     "white" => 9
   }
+
   def self.value(colours)
-    colours.map do |colour|
-      COLOUR_TO_VALUE[colour]
-    end.join("").to_i
+    colours.map(&COLOUR_TO_VALUE).join("").to_i
   end
 end
