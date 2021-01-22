@@ -2,21 +2,18 @@ package hamming
 
 import (
 	"errors"
-	"strings"
 )
 
 func Distance(a, b string) (int, error) {
-	aSlice := strings.Split(a, "")
-	bSlice := strings.Split(b, "")
 	distance := 0
 
-	if len(aSlice) != len(bSlice) {
+	if len(a) != len(b) {
 		err := errors.New("the length isn't right")
 		return distance, err
 	}
 
-	for i, _ := range aSlice {
-		if aSlice[i] != bSlice[i] {
+	for i := 0; i < len(a); i++ {
+		if a[i] != b[i] {
 			distance++
 		}
 	}
