@@ -7,14 +7,14 @@ type Kind string
 const (
 	NaT = "NaT" // not a triangle
 	Equ = "Equ" // equilateral
-	Iso = "Iso"  // isosceles
+	Iso = "Iso" // isosceles
 	Sca = "Sca" // scalene
 )
 
 func IsInvalidTriangle(a, b, c float64) bool {
 	if a <= 0 || b <= 0 || c <= 0 {
 		return true
-	} else if a + b < c || b + c < a || c + a < b {
+	} else if a+b < c || b+c < a || c+a < b {
 		return true
 	} else if math.IsNaN(a) || math.IsNaN(b) || math.IsNaN(c) || math.IsInf(a, 0) || math.IsInf(b, 0) || math.IsInf(c, 0) {
 		return true
