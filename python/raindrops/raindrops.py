@@ -1,4 +1,7 @@
 def convert(number):
+    FACTORS_TO_SOUNDS = {
+        3: "Pling"
+        }
     result = ""
     if number % 3 == 0:
         result += "Pling"
