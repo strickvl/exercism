@@ -5,5 +5,5 @@ class Matrix:
     def row(self, index: int) -> list:
         return self.matrix[index - 1]
 
-    def column(self, index: int) -> list:
+    def column(self, index: int) -> list[int]:
         return [row[index - 1] for row in self.matrix]
