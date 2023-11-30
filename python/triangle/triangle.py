@@ -3,10 +3,7 @@ def is_triangle(sides: list[int]) -> bool:
     b = sides[1]
     c = sides[2]
 
-    if 0 in sides or (a + b < c) or (b + c < a) or (a + c < b):
-        return False
-
-    return True
+    return 0 not in sides and a + b >= c and b + c >= a and a + c >= b
 
 def equilateral(sides: list[int]) -> bool:
     return is_triangle(sides) and sides[0] == sides[1] and sides[0] == sides[2]

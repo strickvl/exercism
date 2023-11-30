@@ -5,7 +5,7 @@ def square(number):
         raise ValueError("number can't be greater than 64")
 
     grains_val = 1
-    for num in range(1, number):
+    for _ in range(1, number):
         grains_val = grains_val * 2
     return grains_val
 
