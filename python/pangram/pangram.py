@@ -6,7 +6,4 @@ def is_pangram(sentence):
         if char.lower() in alphabet:
             abset.add(char.lower())
     print(abset, len(abset))
-    if len(abset) == 26:
-        return True
-    else:
-        return False
+    return len(abset) == 26

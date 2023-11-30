@@ -31,8 +31,8 @@ num_to_ordinal = [
 def recite(start_verse, end_verse):
     start = f"On the {num_to_ordinal[end_verse - 1]} day of Christmas my true love gave to me: "
 
-    if start_verse == 1:
-        pieces = [start] + ["a Partridge in a Pear Tree."]
-    else:
-        pieces = [start] + LIST[-start_verse:]
-    return pieces
+    return (
+        [start] + ["a Partridge in a Pear Tree."]
+        if start_verse == 1
+        else [start] + LIST[-start_verse:]
+    )

@@ -18,13 +18,11 @@ CODON_TO_PROTEIN = {
 STOP_CODONS = ["UAA", "UAG", "UGA"]
 
 def proteins(strand):
-    startidx = 0
     result = []
-    while startidx < len(strand):
+    for startidx in range(0, len(strand), 3):
         codon = strand[startidx:startidx + 3]
         if codon in STOP_CODONS:
             return result
         else:
             result.append(CODON_TO_PROTEIN[codon])
-        startidx += 3
     return result
