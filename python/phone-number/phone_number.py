@@ -8,6 +8,6 @@ class PhoneNumber:
         if len(self.number) != 10:
             raise ValueError("this is an invalid number")
 
-        self.area_code = self.number[0:3]
-        if self.area_code[0] == "0" or self.area_code[0] == "1":
+        self.area_code = self.number[:3]
+        if self.area_code[0] in ["0", "1"]:
             raise ValueError("area code can't start with a value less than 2")
