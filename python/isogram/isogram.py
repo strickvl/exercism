@@ -1,4 +1,5 @@
 import re
+import multiprocessing
 
 def is_isogram(string: str) -> bool:
     chars = re.sub(r'[^a-zA-Z]', '', string).lower()
